@@ -21,9 +21,6 @@ import br.com.erudio.services.PersonServices;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-//@Api(value = "PersonEndpoint", description = "REST API for Person", tags = { "PersonEndpoint" })
-
-//@CrossOrigin
 @Api(tags = "PersonEndpoint")
 @RestController
 @RequestMapping("/api/person/v1")
@@ -45,7 +42,6 @@ public class PersonController {
 		return persons;
 	}	
 	
-	// @CrossOrigin(origins= "http://localhost:8080")
 	@ApiOperation(value = "Find a specific person by your ID" )
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO findById(@PathVariable("id") Long id) {
@@ -54,7 +50,6 @@ public class PersonController {
 		return personVO;
 	}	
 	
-	// @CrossOrigin(origins= {"http://localhost:8080", "http://www.erudio.com.br"})
 	@ApiOperation(value = "Create a new person") 
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
